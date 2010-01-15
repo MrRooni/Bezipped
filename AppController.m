@@ -25,14 +25,15 @@
 										[NSNumber numberWithBool:YES], @"useGrowl",
 										nil]];
 	
-	NSFileManager *fileManager = [[NSFileManager defaultManager] retain];
-	NSString *bezippedTempDirectory;
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	NSString *bezippedTempDirectory = @"";
 	
 	NSArray *applicationSupportDirectories = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
     if ([applicationSupportDirectories count] == 0)	
-		bezippedTempDirectory = [[@"~/.bezippedTemp" stringByExpandingTildeInPath] retain];
+		bezippedTempDirectory = [@"~/.bezippedTemp" stringByExpandingTildeInPath];
+	else
+		bezippedTempDirectory = [[applicationSupportDirectories objectAtIndex:0] stringByAppendingPathComponent:@"Bezipped/Temp"];
 	
-	bezippedTempDirectory = [[[applicationSupportDirectories objectAtIndex:0] stringByAppendingPathComponent:@"Bezipped/Temp"] retain];
 	if ([fileManager fileExistsAtPath:bezippedTempDirectory] == NO)
 		return;
 	
