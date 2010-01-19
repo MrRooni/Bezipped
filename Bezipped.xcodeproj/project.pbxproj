@@ -13,7 +13,7 @@
 		131820E40DA9378100DCC77A /* ArchiveProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = 131820DD0DA9378100DCC77A /* ArchiveProgressController.m */; };
 		131820E50DA9378100DCC77A /* MFDropBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 131820DF0DA9378100DCC77A /* MFDropBox.m */; };
 		131820E60DA9378100DCC77A /* MFFlippedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 131820E10DA9378100DCC77A /* MFFlippedView.m */; };
-		131820E70DA9378100DCC77A /* FSGrowler.m in Sources */ = {isa = PBXBuildFile; fileRef = 131820E30DA9378100DCC77A /* FSGrowler.m */; };
+		131820E70DA9378100DCC77A /* MFGrowler.m in Sources */ = {isa = PBXBuildFile; fileRef = 131820E30DA9378100DCC77A /* MFGrowler.m */; };
 		131821070DA938A300DCC77A /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1318209E0DA91D9300DCC77A /* Growl.framework */; };
 		1318212C0DA93C6A00DCC77A /* Bezipped.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1318212B0DA93C6A00DCC77A /* Bezipped.icns */; };
 		136F75910DB25F51006E4780 /* MFBigTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 136F75900DB25F51006E4780 /* MFBigTextView.m */; };
@@ -50,7 +50,7 @@
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		130E678B0DC552BE001E5540 /* BezippedSoftwareUpdates.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BezippedSoftwareUpdates.xml; sourceTree = "<group>"; };
-		131394F60DB40DC0006C42EB /* ArchiveProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArchiveProgressView.h; sourceTree = "<group>"; };
+		131394F60DB40DC0006C42EB /* ArchiveProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArchiveProgressView.h; sourceTree = "<group>"; wrapsLines = 0; };
 		131394F70DB40DC0006C42EB /* ArchiveProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArchiveProgressView.m; sourceTree = "<group>"; };
 		1318209E0DA91D9300DCC77A /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		131820D10DA9368600DCC77A /* ArchiveProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArchiveProgressView.xib; sourceTree = "<group>"; };
@@ -60,8 +60,8 @@
 		131820DF0DA9378100DCC77A /* MFDropBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFDropBox.m; sourceTree = "<group>"; };
 		131820E00DA9378100DCC77A /* MFFlippedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFFlippedView.h; sourceTree = "<group>"; };
 		131820E10DA9378100DCC77A /* MFFlippedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFFlippedView.m; sourceTree = "<group>"; };
-		131820E20DA9378100DCC77A /* FSGrowler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSGrowler.h; sourceTree = "<group>"; };
-		131820E30DA9378100DCC77A /* FSGrowler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSGrowler.m; sourceTree = "<group>"; };
+		131820E20DA9378100DCC77A /* MFGrowler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFGrowler.h; sourceTree = "<group>"; };
+		131820E30DA9378100DCC77A /* MFGrowler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFGrowler.m; sourceTree = "<group>"; };
 		1318212B0DA93C6A00DCC77A /* Bezipped.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Bezipped.icns; sourceTree = "<group>"; };
 		136F758F0DB25F51006E4780 /* MFBigTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFBigTextView.h; sourceTree = "<group>"; };
 		136F75900DB25F51006E4780 /* MFBigTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFBigTextView.m; sourceTree = "<group>"; };
@@ -119,8 +119,8 @@
 				131820DF0DA9378100DCC77A /* MFDropBox.m */,
 				131820E00DA9378100DCC77A /* MFFlippedView.h */,
 				131820E10DA9378100DCC77A /* MFFlippedView.m */,
-				131820E20DA9378100DCC77A /* FSGrowler.h */,
-				131820E30DA9378100DCC77A /* FSGrowler.m */,
+				131820E20DA9378100DCC77A /* MFGrowler.h */,
+				131820E30DA9378100DCC77A /* MFGrowler.m */,
 				1375AE8D0DB6EB0F00855CFC /* PreferencesController.h */,
 				1375AE8E0DB6EB0F00855CFC /* PreferencesController.m */,
 				13E7A00F0DCC87BF00CD8237 /* AboutBoxController.h */,
@@ -268,7 +268,7 @@
 				131820E40DA9378100DCC77A /* ArchiveProgressController.m in Sources */,
 				131820E50DA9378100DCC77A /* MFDropBox.m in Sources */,
 				131820E60DA9378100DCC77A /* MFFlippedView.m in Sources */,
-				131820E70DA9378100DCC77A /* FSGrowler.m in Sources */,
+				131820E70DA9378100DCC77A /* MFGrowler.m in Sources */,
 				13B90C6E0DAC41F100996E85 /* AJHBezierUtils.m in Sources */,
 				13B90C6F0DAC41F100996E85 /* MFDropZoneView.m in Sources */,
 				136F75910DB25F51006E4780 /* MFBigTextView.m in Sources */,

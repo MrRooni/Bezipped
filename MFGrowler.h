@@ -1,8 +1,8 @@
 //
-//  AboutBoxController.h
+//  FSGrowler.h
 //  Bezipped
 //
-//  Created by Michael Fey on 5/3/08.
+//  Created by Michael Fey on 3/26/08.
 //  Copyright (c) 2010, Michael Fey
 //  All rights reserved.
 //
@@ -30,15 +30,16 @@
 //  POSSIBILITY OF SUCH DAMAGE.
 
 #import <Cocoa/Cocoa.h>
+#import <Growl/Growl.h>
 
-
-@interface AboutBoxController : NSObject {
-	IBOutlet NSWindow* aboutBoxWindow;
+@interface MFGrowler : NSObject <GrowlApplicationBridgeDelegate> {
 }
 
-- (NSWindow*)aboutBoxWindow;
-- (NSString*)versionString;
++ (MFGrowler*) sharedGrowler;
 
-- (IBAction)visitFruitStandSoftwareDotCom:(id)sender;
+- (void) growlForArchiveCompletion:(NSString*) completedFilePath;
+
+// Growl delegate methods
+- (NSDictionary*) registrationDictionaryForGrowl;
 
 @end
