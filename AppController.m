@@ -45,8 +45,11 @@
 	[standardDefaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
 										@".", @"completedArchiveLocation",
 										[NSNumber numberWithBool:YES], @"createWindowsFriendlyArchives",
-										[NSNumber numberWithBool:YES], @"useGrowl",
+										[NSNumber numberWithBool:YES], @"useNotifications",
 										nil]];
+
+	if ([standardDefaults objectForKey:@"useNotifications"] == nil && [standardDefaults objectForKey:@"useGrowl"] != nil)
+		[standardDefaults setBool:[standardDefaults boolForKey:@"useGrowl"] forKey:@"useNotifications"];
 	
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	NSString *bezippedTempDirectory = @"";
@@ -65,7 +68,10 @@
 
 - (void)awakeFromNib
 {
-	[mainWindow setShowsResizeIndicator:NO];
+	NSMenu *applicationMenu = [[NSApp mainMenu] itemAtIndex:0].submenu;
+	checkForUpdatesMenuItem = [[applicationMenu itemWithTitle:@"Check for updates..."] retain];
+	if (checkForUpdatesMenuItem != nil)
+		[applicationMenu removeItem:checkForUpdatesMenuItem];
 }
 
 - (BOOL)processFiles:(NSArray*)droppedFiles {
@@ -95,7 +101,6 @@
 		NSSize maximumSize = {FLT_MAX, FLT_MAX};
 		[mainWindow setContentMinSize:minimumSize];
 		[mainWindow setContentMaxSize:maximumSize];
-		[mainWindow setShowsResizeIndicator:YES];
 		
 		// Reset the resizing masks
 		[scrollView setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
@@ -151,8 +156,12 @@
 	if (![progressDocumentView archivesAreInProgress])
 		return NSTerminateNow;
 	
-	int alertReturn = NSRunAlertPanel(@"Are you sure you want to quit?", @"There are still files being bezipped, quit anyway?", @"Quit", @"Don't Quit", nil);
-	if (alertReturn == NSAlertAlternateReturn)
+	NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+	[alert setMessageText:NSLocalizedString(@"Are you sure you want to quit?", @"Quit confirmation alert title")];
+	[alert setInformativeText:NSLocalizedString(@"There are still files being bezipped, quit anyway?", @"Quit confirmation alert body")];
+	[alert addButtonWithTitle:NSLocalizedString(@"Quit", @"Quit confirmation primary button")];
+	[alert addButtonWithTitle:NSLocalizedString(@"Don't Quit", @"Quit confirmation cancel button")];
+	if ([alert runModal] == NSAlertSecondButtonReturn)
 		return NSTerminateCancel;
 	
 	[progressDocumentView terminateAllBezippings];
@@ -163,16 +172,16 @@
 
 - (IBAction)openForZipping:(id)sender
 {
-	int result;
-    NSOpenPanel *openPanel = [NSOpenPanel openPanel];
+	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
 	
     [openPanel setAllowsMultipleSelection:YES];
 	[openPanel setCanChooseDirectories:YES];
-    [openPanel setTitle:@"Bezip"];
-    [openPanel setDelegate:self];
-    result = [openPanel runModalForDirectory:NSHomeDirectory() file:nil types:nil];
-    if (result == NSOKButton)
-		[self processFiles:[openPanel filenames]];
+	[openPanel setCanChooseFiles:YES];
+    [openPanel setTitle:NSLocalizedString(@"Bezip", @"Open panel title")];
+	if ([openPanel runModal] == NSModalResponseOK) {
+		NSArray *selectedPaths = [[openPanel URLs] valueForKey:@"path"];
+		[self processFiles:selectedPaths];
+	}
 }
 
 - (IBAction)togglePreferences:(id)sender
@@ -190,6 +199,12 @@
 	if (aboutBoxController == nil)
 		aboutBoxController = [[AboutBoxController alloc] init];
 	[[aboutBoxController aboutBoxWindow] makeKeyAndOrderFront:self];
+}
+
+- (void)dealloc
+{
+	[checkForUpdatesMenuItem release];
+	[super dealloc];
 }
 
 @end

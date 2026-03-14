@@ -41,6 +41,7 @@
 	MFFlippedView *progressDocumentView;
 	PreferencesController *preferencesController;
 	AboutBoxController *aboutBoxController;
+	NSMenuItem *checkForUpdatesMenuItem;
 		
 	IBOutlet NSWindow *mainWindow;
 	IBOutlet NSScrollView *scrollView;

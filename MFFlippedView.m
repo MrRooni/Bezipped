@@ -38,7 +38,7 @@
 - (BOOL) archivesAreInProgress
 {
 	int i = 0;
-	for (i; i < [archiveProgressControllers count]; i++)
+	for (; i < [archiveProgressControllers count]; i++)
 		if ([[archiveProgressControllers objectAtIndex:i] isArchiveInProgress])
 			return YES;
 	
@@ -89,7 +89,7 @@
 - (void) terminateAllBezippings
 {
 	int i = 0;
-	for (i; i < [archiveProgressControllers count]; i++)
+	for (; i < [archiveProgressControllers count]; i++)
 		[[archiveProgressControllers objectAtIndex:i] stopBuildingArchive:nil];
 }
 

@@ -30,16 +30,12 @@
 //  POSSIBILITY OF SUCH DAMAGE.
 
 #import <Cocoa/Cocoa.h>
-#import <Growl/Growl.h>
 
-@interface MFGrowler : NSObject <GrowlApplicationBridgeDelegate> {
+@interface MFGrowler : NSObject {
 }
 
 + (MFGrowler*) sharedGrowler;
 
-- (void) growlForArchiveCompletion:(NSString*) completedFilePath;
-
-// Growl delegate methods
-- (NSDictionary*) registrationDictionaryForGrowl;
+- (void) announceArchiveCompletionAtPath:(NSString*) completedFilePath;
 
 @end

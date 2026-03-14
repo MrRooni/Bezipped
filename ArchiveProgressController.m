@@ -101,7 +101,7 @@ int BZIP_RETURN_CODE_INTERNAL_ERROR = 2;
 	double sizeOfAllDraggedFiles = 0;
 
 	int i = 0;
-	for (i; i < [filesToArchive count]; i++) {
+	for (; i < [filesToArchive count]; i++) {
 		[fileNames addObject:[[filesToArchive objectAtIndex:i] lastPathComponent]];
 		fileNamesLabelText = [fileNamesLabelText stringByAppendingString:[fileNames objectAtIndex:i]];
 		sizeOfAllDraggedFiles += [[self sizeOfFileSystemObjectAtPath:[filesToArchive objectAtIndex:i]] doubleValue];
@@ -222,7 +222,7 @@ int BZIP_RETURN_CODE_INTERNAL_ERROR = 2;
 		additionalFromIndexPosition = 0;
 		
 	int i = 0;
-	for (i; i < [filesToArchive count]; i++) {
+	for (; i < [filesToArchive count]; i++) {
 		[filePathsAfterMostCommonPath addObject:[[filesToArchive objectAtIndex:i] substringFromIndex:[mostCommonPath length] + additionalFromIndexPosition]];
 		NSLog(@"File: %@", [filePathsAfterMostCommonPath objectAtIndex:i]);
 	}
@@ -235,7 +235,7 @@ int BZIP_RETURN_CODE_INTERNAL_ERROR = 2;
 	
 	mostCommonPath = [[filesToArchive objectAtIndex:0] stringByDeletingLastPathComponent];
 	int i = 1;
-	for (i; i < [filesToArchive count]; i++) {
+	for (; i < [filesToArchive count]; i++) {
 		if ([mostCommonPath isEqualToString:[[filesToArchive objectAtIndex:i] stringByDeletingLastPathComponent]])
 			continue;
 		
@@ -248,7 +248,7 @@ int BZIP_RETURN_CODE_INTERNAL_ERROR = 2;
 		if (minLength > [fileToArchivePathTokens count])
 			minLength = [fileToArchivePathTokens count];
 		
-		for (j; j < minLength; j++) {
+		for (; j < minLength; j++) {
 			if (![[commonPathTokens objectAtIndex:j] isEqualToString:[fileToArchivePathTokens objectAtIndex:j]])
 				break;
 			
@@ -357,8 +357,8 @@ int BZIP_RETURN_CODE_INTERNAL_ERROR = 2;
 
 - (void)announceSuccess:(NSString*)completedFilePath
 {
-	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"useGrowl"])
-		[[MFGrowler sharedGrowler] growlForArchiveCompletion:completedFilePath];
+	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"useNotifications"])
+		[[MFGrowler sharedGrowler] announceArchiveCompletionAtPath:completedFilePath];
 }
 
 #pragma mark Dealloc

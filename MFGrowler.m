@@ -31,6 +31,8 @@
 
 #import "MFGrowler.h"
 
+#import <UserNotifications/UserNotifications.h>
+
 static MFGrowler* sharedGrowler = nil;
 
 @implementation MFGrowler
@@ -52,7 +54,6 @@ static MFGrowler* sharedGrowler = nil;
 	{
         if (sharedGrowler == nil) {
             sharedGrowler = [super allocWithZone:zone];
-			[GrowlApplicationBridge setGrowlDelegate:sharedGrowler];
             return sharedGrowler;  // assignment and return on first allocation
         }
     }
@@ -70,38 +71,29 @@ static MFGrowler* sharedGrowler = nil;
     return self;
 }
 
-- (unsigned)retainCount
+- (NSUInteger)retainCount
 {
     return UINT_MAX;  //denotes an object that cannot be released
 }
 
-- (void) growlForArchiveCompletion:(NSString*) completedFilePath
+- (void) announceArchiveCompletionAtPath:(NSString*) completedFilePath
 {
-	[GrowlApplicationBridge notifyWithTitle:@"Your files have been bezipped!" 
-								description:[@"You can find your compressed files here: " stringByAppendingString:completedFilePath] 
-						   notificationName:@"Files Bezipped" 
-								   iconData:nil 
-								   priority:0 
-								   isSticky:NO 
-							   clickContext:nil];
-}
+	UNUserNotificationCenter *notificationCenter = [UNUserNotificationCenter currentNotificationCenter];
+	[notificationCenter requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionSound)
+									  completionHandler:^(BOOL granted, NSError * _Nullable error) {
+		if (!granted || error != nil)
+			return;
 
-- (void)release
-{
-    //do nothing
-}
+		UNMutableNotificationContent *content = [[[UNMutableNotificationContent alloc] init] autorelease];
+		content.title = NSLocalizedString(@"Your files have been bezipped!", @"Archive completion notification title");
+		content.body = [NSString stringWithFormat:NSLocalizedString(@"You can find your compressed files here: %@", @"Archive completion notification body"), completedFilePath];
+		content.sound = [UNNotificationSound defaultSound];
 
-- (id)autorelease
-{
-    return self;
-}
-
-- (NSDictionary*) registrationDictionaryForGrowl
-{
-	NSArray* notifications = [NSArray arrayWithObject:@"Files Bezipped"];
-	NSDictionary* registrationDictionary = [NSDictionary dictionaryWithObjectsAndKeys:notifications, GROWL_NOTIFICATIONS_ALL, 
-											notifications, GROWL_NOTIFICATIONS_DEFAULT, nil];
-	return registrationDictionary;
+		UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:[[NSUUID UUID] UUIDString]
+																			content:content
+																			trigger:nil];
+		[notificationCenter addNotificationRequest:request withCompletionHandler:nil];
+	}];
 }
 
 @end

@@ -71,17 +71,15 @@
 
 - (IBAction)chooseArchiveLocation:(id)sender
 {
-	int result;
-    NSOpenPanel *openPanel = [NSOpenPanel openPanel];
+	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
 	
     [openPanel setAllowsMultipleSelection:NO];
 	[openPanel setCanChooseDirectories:YES];
 	[openPanel setCanChooseFiles:NO];
-    [openPanel setTitle:@"Completed Archives Location"];
-    [openPanel setDelegate:self];
-    result = [openPanel runModalForDirectory:NSHomeDirectory() file:nil types:nil];
-    if (result == NSOKButton) {
-		[[NSUserDefaults standardUserDefaults] setValue:[openPanel filename] forKey:@"completedArchiveLocation"];
+	[openPanel setTitle:NSLocalizedString(@"Completed Archives Location", @"Open panel title for choosing the completed archives folder")];
+	if ([openPanel runModal] == NSModalResponseOK) {
+		NSString *selectedPath = [[[openPanel URLs] objectAtIndex:0] path];
+		[[NSUserDefaults standardUserDefaults] setValue:selectedPath forKey:@"completedArchiveLocation"];
 		
 		NSString* archiveLocationPath = [[NSUserDefaults standardUserDefaults] stringForKey:@"completedArchiveLocation"];
 		if ([archiveLocationPopUp numberOfItems] == 4)

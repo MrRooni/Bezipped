@@ -3,48 +3,32 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		131394F80DB40DC0006C42EB /* ArchiveProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 131394F70DB40DC0006C42EB /* ArchiveProgressView.m */; };
-		1318209F0DA91D9300DCC77A /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1318209E0DA91D9300DCC77A /* Growl.framework */; };
 		131820D20DA9368600DCC77A /* ArchiveProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 131820D10DA9368600DCC77A /* ArchiveProgressView.xib */; };
 		131820E40DA9378100DCC77A /* ArchiveProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = 131820DD0DA9378100DCC77A /* ArchiveProgressController.m */; };
 		131820E50DA9378100DCC77A /* MFDropBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 131820DF0DA9378100DCC77A /* MFDropBox.m */; };
 		131820E60DA9378100DCC77A /* MFFlippedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 131820E10DA9378100DCC77A /* MFFlippedView.m */; };
 		131820E70DA9378100DCC77A /* MFGrowler.m in Sources */ = {isa = PBXBuildFile; fileRef = 131820E30DA9378100DCC77A /* MFGrowler.m */; };
-		131821070DA938A300DCC77A /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1318209E0DA91D9300DCC77A /* Growl.framework */; };
 		1318212C0DA93C6A00DCC77A /* Bezipped.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1318212B0DA93C6A00DCC77A /* Bezipped.icns */; };
 		136F75910DB25F51006E4780 /* MFBigTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 136F75900DB25F51006E4780 /* MFBigTextView.m */; };
 		1375AE890DB6E85800855CFC /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1375AE880DB6E85800855CFC /* Preferences.xib */; };
 		1375AE8F0DB6EB0F00855CFC /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1375AE8E0DB6EB0F00855CFC /* PreferencesController.m */; };
-		13851A000DADAE1100170D43 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138519FF0DADAE1100170D43 /* Sparkle.framework */; };
-		13851A030DADAE2200170D43 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 138519FF0DADAE1100170D43 /* Sparkle.framework */; };
 		139F39C10EA800480078D241 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 139F39C00EA800480078D241 /* AppController.m */; };
 		13B90C6E0DAC41F100996E85 /* AJHBezierUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B90C6B0DAC41F100996E85 /* AJHBezierUtils.m */; };
 		13B90C6F0DAC41F100996E85 /* MFDropZoneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B90C6D0DAC41F100996E85 /* MFDropZoneView.m */; };
 		13E79FF20DCC803B00CD8237 /* AboutBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13E79FF10DCC803B00CD8237 /* AboutBox.xib */; };
 		13E7A0110DCC87BF00CD8237 /* AboutBoxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E7A0100DCC87BF00CD8237 /* AboutBoxController.m */; };
+		13F201A12C00000100BEZIP /* SUUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F201A02C00000100BEZIP /* SUUpdater.m */; };
+		13F201A32C00000100BEZIP /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13F201A22C00000100BEZIP /* UserNotifications.framework */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		131821200DA938BD00DCC77A /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				13851A030DADAE2200170D43 /* Sparkle.framework in CopyFiles */,
-				131821070DA938A300DCC77A /* Growl.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -52,7 +36,6 @@
 		130E678B0DC552BE001E5540 /* BezippedSoftwareUpdates.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BezippedSoftwareUpdates.xml; sourceTree = "<group>"; };
 		131394F60DB40DC0006C42EB /* ArchiveProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArchiveProgressView.h; sourceTree = "<group>"; wrapsLines = 0; };
 		131394F70DB40DC0006C42EB /* ArchiveProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArchiveProgressView.m; sourceTree = "<group>"; };
-		1318209E0DA91D9300DCC77A /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		131820D10DA9368600DCC77A /* ArchiveProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArchiveProgressView.xib; sourceTree = "<group>"; };
 		131820DC0DA9378100DCC77A /* ArchiveProgressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArchiveProgressController.h; sourceTree = "<group>"; };
 		131820DD0DA9378100DCC77A /* ArchiveProgressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArchiveProgressController.m; sourceTree = "<group>"; };
@@ -68,7 +51,6 @@
 		1375AE880DB6E85800855CFC /* Preferences.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
 		1375AE8D0DB6EB0F00855CFC /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
 		1375AE8E0DB6EB0F00855CFC /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
-		138519FF0DADAE1100170D43 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		139F39BF0EA800480078D241 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		139F39C00EA800480078D241 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		13B90C6A0DAC41F100996E85 /* AJHBezierUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJHBezierUtils.h; sourceTree = "<group>"; };
@@ -80,6 +62,9 @@
 		13E79FF10DCC803B00CD8237 /* AboutBox.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutBox.xib; sourceTree = "<group>"; };
 		13E7A00F0DCC87BF00CD8237 /* AboutBoxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutBoxController.h; sourceTree = "<group>"; };
 		13E7A0100DCC87BF00CD8237 /* AboutBoxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutBoxController.m; sourceTree = "<group>"; };
+		13F2019F2C00000100BEZIP /* SUUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUUpdater.h; sourceTree = "<group>"; };
+		13F201A02C00000100BEZIP /* SUUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUUpdater.m; sourceTree = "<group>"; };
+		13F201A22C00000100BEZIP /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = /System/Library/Frameworks/UserNotifications.framework; sourceTree = "<absolute>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -94,8 +79,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				1318209F0DA91D9300DCC77A /* Growl.framework in Frameworks */,
-				13851A000DADAE1100170D43 /* Sparkle.framework in Frameworks */,
+				13F201A32C00000100BEZIP /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +105,8 @@
 				131820E10DA9378100DCC77A /* MFFlippedView.m */,
 				131820E20DA9378100DCC77A /* MFGrowler.h */,
 				131820E30DA9378100DCC77A /* MFGrowler.m */,
+				13F2019F2C00000100BEZIP /* SUUpdater.h */,
+				13F201A02C00000100BEZIP /* SUUpdater.m */,
 				1375AE8D0DB6EB0F00855CFC /* PreferencesController.h */,
 				1375AE8E0DB6EB0F00855CFC /* PreferencesController.m */,
 				13E7A00F0DCC87BF00CD8237 /* AboutBoxController.h */,
@@ -134,9 +120,8 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				138519FF0DADAE1100170D43 /* Sparkle.framework */,
-				1318209E0DA91D9300DCC77A /* Growl.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				13F201A22C00000100BEZIP /* UserNotifications.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -212,7 +197,6 @@
 			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Bezipped" */;
 			buildPhases = (
 				8D1107290486CEB800E47090 /* Resources */,
-				131821200DA938BD00DCC77A /* CopyFiles */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 			);
@@ -231,10 +215,24 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 2630;
+				TargetAttributes = {
+					8D1107260486CEB800E47090 = {
+						CreatedOnToolsVersion = 26.3;
+					};
+				};
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Bezipped" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Bezipped */;
+			preferredProjectObjectVersion = 56;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -276,6 +274,7 @@
 				1375AE8F0DB6EB0F00855CFC /* PreferencesController.m in Sources */,
 				13E7A0110DCC87BF00CD8237 /* AboutBoxController.m in Sources */,
 				139F39C10EA800480078D241 /* AppController.m in Sources */,
+				13F201A12C00000100BEZIP /* SUUpdater.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +304,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -312,13 +313,16 @@
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Bezipped_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fruitstandsoftware.Bezipped;
 				PRODUCT_NAME = Bezipped;
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
 			};
 			name = Debug;
 		};
@@ -326,17 +330,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
-				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Bezipped_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fruitstandsoftware.Bezipped;
 				PRODUCT_NAME = Bezipped;
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
 			};
 			name = Release;
 		};
@@ -344,14 +353,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
 			};
 			name = Debug;
 		};
@@ -359,12 +369,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
 			};
 			name = Release;
 		};
